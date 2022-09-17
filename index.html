@@ -18,8 +18,10 @@
         <div class="card-front">
           <img src="images/card-logo.svg" alt="" class="card-logo">
           <p class="card-number-card">0000 0000 0000 0000</p>
-          <p class="cardholder-name-card">Jane Appleseed</p>
-          <p class="expiry-date-card">00/00</p>
+          <div class="name-expiry-date">
+            <p class="cardholder-name-card">JANE APPLESEED</p>
+            <p class="expiry-date-card">00/00</p>
+          </div>
         </div>
         <div class="card-back"><p class="card-back-text">000</p></div>
       </div>
@@ -43,7 +45,7 @@
             <div class="expiry-date-div">
               <label for="expiry-date" class="labels">EXP. DATE (MM/YY)</label>
               <div class="expiry-date-inputs">
-                <input id="expiry-date" type="text" placeholder="MM" maxlength="2" >
+                <input id="expiry-date" type="text" placeholder="MM" maxlength="2" min="01" max="12">
                 <input id="expiry-date" type="text" placeholder="YY" maxlength="2" >
               </div>
               <span class="error-message" id="expiry-date-error"></span>

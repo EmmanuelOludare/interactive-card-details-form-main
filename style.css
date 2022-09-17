@@ -35,8 +35,10 @@ body {
 .cards-background {
   background-image: url("images/bg-main-mobile.png");
   background-repeat: no-repeat;
-  height: 225px;
+  background-size: cover;
+  height: 13.8rem;
   z-index: -1;
+  width: 100vw;
 }
 
 .card-front-back {
@@ -44,6 +46,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   gap: 0;
   position: absolute;
   top: 1em;
@@ -66,6 +69,32 @@ body {
   color: var(--White);
 }
 
+.card-logo {
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  left: 18px;
+}
+
+.card-number-card {
+  font-size: 1.32rem;
+  position: absolute;
+  bottom: 50px;
+  left: 18px;
+  right: 18px;
+}
+
+.name-expiry-date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 20px;
+  left: 18px;
+  right: 18px;
+  margin: auto;
+}
+
 .card-back {
   background-image: url("images/bg-card-back.png");
   background-repeat: no-repeat;
@@ -78,6 +107,13 @@ body {
   z-index: 0;
   padding: 0.5em;
   color: var(--White);
+}
+
+.card-back-text {
+  position: absolute;
+  top: 67px;
+  right: 37px;
+  font-size: 0.7rem;
 }
 
 .inputs-field-section-container {
