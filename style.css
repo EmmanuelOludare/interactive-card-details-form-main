@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -16,7 +17,6 @@
 }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
   width: 100vw;
 }
 
@@ -104,13 +104,81 @@ body {
   gap: 10px;
 }
 
+input {
+  padding: 0.9em;
+  border-radius: 8px;
+  outline: none;
+  border: solid 1px var(--Dark-grayish-violet);
+}
+
+input::placeholder {
+  color: var(--Dark-grayish-violet);
+  font-size: 1.2rem;
+}
+
+label {
+  color: var(--Very-dark-violet);
+}
+
 .error-message {
+  color: var(--Red);
+  font-size: 0.7rem;
 }
 
 .cardholder-name-div {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.card-number-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expiry-date-cvc-container {
+  display: flex;
+  gap: 15px;
+}
+
+.expiry-date-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expiry-date-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+#expiry-date {
+  width: 5.3em;
+}
+
+.cvc-number-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#cvc-number {
+  width: 12.8em;
+}
+
+.confirm-button-container {
+  width: 100%;
+}
+
+#confirm-button {
+  width: 100%;
+  color: var(--White);
+  background-color: var(--Very-dark-violet);
+  border-radius: 10px;
+  padding: 1em 0 1em 0;
+  border: none;
+  font-size: 1rem;
 }
 
 .back-page {
