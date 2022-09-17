@@ -1,0 +1,133 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --Red: hsl(0, 100%, 66%);
+  /*Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)*/
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  width: 100vw;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  gap: 4em;
+}
+
+.cards-background-section-container {
+  position: relative;
+}
+
+.cards-background {
+  background-image: url("images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  height: 225px;
+  z-index: -1;
+}
+
+.card-front-back {
+  width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 0;
+  position: absolute;
+  top: 1em;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.card-front {
+  background-image: url("images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150px;
+  width: 275px;
+  align-self: flex-start;
+  position: absolute;
+  top: 6em;
+  z-index: 1;
+  padding: 0.5em;
+  color: var(--White);
+}
+
+.card-back {
+  background-image: url("images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150px;
+  width: 275px;
+  align-self: flex-end;
+  position: absolute;
+  top: 0.6em;
+  z-index: 0;
+  padding: 0.5em;
+  color: var(--White);
+}
+
+.inputs-field-section-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-complete-state {
+  position: absolute;
+  width: 90%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.front-page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.error-message {
+}
+
+.cardholder-name-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back-page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
