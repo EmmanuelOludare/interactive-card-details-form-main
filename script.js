@@ -3,7 +3,12 @@ let cardHolderNameInput = document.querySelector('#cardholder-name');
 let cardHolderNameCard = document.querySelector('.cardholder-name-card');
 let cardNumberInput = document.querySelector('#card-number');
 let cardNumberCard = document.querySelector('.card-number-card');
-let expiryDateInput = document.querySelector("#expiry-date")
+let expiryDateMonthInput = document.querySelector(".expiry-date-month");
+let expiryDateMonthCard = document.querySelector(".month");
+let expiryDateYearInput = document.querySelector(".expiry-date-year");
+let expiryDateYearCard = document.querySelector(".year");
+let cvcNumberInput = document.querySelector("#cvc-number");
+let cvcNumberCard = document.querySelector(".cvc-number-card")
 
 //?CARDHOLDER NAME
 cardHolderNameInput.addEventListener('keyup', () => {
@@ -25,7 +30,17 @@ cardNumberInput.addEventListener('keyup', () => {
     }
 });
 
-//?EXPIRY DATE
-expiryDateInput.addEventListener('keyup', () => {
-    console.log(expiryDateInput.value)
+//?EXPIRY DATE MONTH
+expiryDateMonthInput.addEventListener('keyup', () => {
+    expiryDateMonthCard.innerHTML = expiryDateMonthInput.value;
+});
+
+//?EXPIRY DATE YEAR
+expiryDateYearInput.addEventListener('keyup', () => {
+    expiryDateYearCard.innerHTML = expiryDateYearInput.value;
+});
+
+//?CVC NUMBER
+cvcNumberInput.addEventListener('keyup', () => {
+    cvcNumberCard.innerHTML = cvcNumberInput.value;
 });

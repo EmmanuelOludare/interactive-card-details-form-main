@@ -110,7 +110,7 @@ body {
   color: var(--White);
 }
 
-.card-back-text {
+.cvc-number-card {
   position: absolute;
   top: 67px;
   right: 37px;
