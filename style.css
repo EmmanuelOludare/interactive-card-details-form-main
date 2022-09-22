@@ -165,13 +165,13 @@ label {
 .cardholder-name-div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .card-number-div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .expiry-date-cvc-container {
@@ -182,7 +182,7 @@ label {
 .expiry-date-div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .expiry-date-inputs {
@@ -197,7 +197,7 @@ label {
 .cvc-number-div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 #cvc-number {
@@ -216,6 +216,7 @@ label {
   padding: 1em 0 1em 0;
   border: none;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .back-page {
