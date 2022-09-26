@@ -60,18 +60,22 @@ confirmButton.addEventListener('click', (e) => {
         cardHolderNameValidation: false,
         cardNumberValidation: false,
         expiryDateMonthValidation: false,
+        expiryDateYearValidation: false,
         cvcNumberValidation: false
     };
 
     if (cardHolderNameInput.value == "") {
         cardholderNameError.innerHTML = "Can't be blank";
         validations.cardHolderNameValidation = false;
+        cardHolderNameInput.classList.add('error-alert');
     } else if (!isNaN(cardHolderNameInput.value)) {
         cardholderNameError.innerHTML = "Wrong format";
         validations.cardHolderNameValidation = false;
+        cardHolderNameInput.classList.add('error-alert');
     } else {
         cardholderNameError.innerHTML = " ";
         validations.cardHolderNameValidation = true;
+        cardHolderNameInput.classList.remove('error-alert');
     };
 
     var array = cardNumberInput.value.split(" ").join("");
@@ -79,42 +83,80 @@ confirmButton.addEventListener('click', (e) => {
     if (cardNumberInput.value == "") {
         cardNumberError.innerHTML = "Can't be blank";
         validations.cardNumberValidation = false;
+        cardNumberInput.classList.add('error-alert');
     } else if (isNaN(num)) {
         cardNumberError.innerHTML = "Wrong format, numbers only";
         validations.cardNumberValidation = false;
+        cardNumberInput.classList.add('error-alert');
+    } else if (num.length < 16) {
+        cardNumberError.innerHTML = "Invalid number of characters";
+        validations.cardNumberValidation = false;
+        cardNumberInput.classList.add('error-alert');
     } else {
         cardNumberError.innerHTML = " "
         validations.cardNumberValidation = true;
+        cardNumberInput.classList.remove('error-alert');
     };
 
-    if (expiryDateMonthInput.value == "" && expiryDateYearInput.value == "") {
+    if (expiryDateMonthInput.value == "") {
         expiryDateError.innerHTML = "Can't be blank";
         validations.expiryDateMonthValidation = false;
-    } else if (isNaN(expiryDateMonthInput.value) && isNaN(expiryDateYearInput.value)) {
+        expiryDateMonthInput.classList.add('error-alert');
+    } else if (isNaN(expiryDateMonthInput.value)) {
         expiryDateError.innerHTML = "Wrong format, numbers only";
         validations.expiryDateMonthValidation = false;
+        expiryDateMonthInput.classList.add('error-alert');
+    } else if (expiryDateMonthInput.value.length < 2) {
+        expiryDateError.innerHTML = "Invalid number of characters";
+        validations.expiryDateMonthValidation = false;
+        expiryDateMonthInput.classList.add('error-alert');
     } else {
         expiryDateError.innerHTML = " ";
         validations.expiryDateMonthValidation = true;
+        expiryDateMonthInput.classList.remove('error-alert');
+    };
+
+
+
+    if (expiryDateYearInput.value == "") {
+        expiryDateError.innerHTML = "Can't be blank";
+        validations.expiryDateYearValidation = false;
+        expiryDateYearInput.classList.add('error-alert');
+    } else if (isNaN(expiryDateYearInput.value)) {
+        expiryDateError.innerHTML = "Wrong format, numbers only";
+        validations.expiryDateYearValidation = false;
+        expiryDateYearInput.classList.add('error-alert');
+    } else if (expiryDateYearInput.value.length < 2) {
+        expiryDateError.innerHTML = "Invalid number of characters";
+        validations.expiryDateYearValidation = false;
+        expiryDateYearInput.classList.add('error-alert');
+    } else {
+        expiryDateError.innerHTML = " ";
+        validations.expiryDateYearValidation = true;
+        expiryDateYearInput.classList.remove('error-alert');
     };
 
     if (cvcNumberInput.value == "") {
         cvcNumberError.innerHTML = "Can't be blank";
         validations.cvcNumberValidation = false;
+        cvcNumberInput.classList.add('error-alert');
     } else if (isNaN(cvcNumberInput.value)) {
         cvcNumberError.innerHTML = "Wrong format, numbers only";
         validations.cvcNumberValidation = false;
+        cvcNumberInput.classList.add('error-alert');
+    } else if (cvcNumberInput.value.length < 3) {
+        cvcNumberError.innerHTML = "Invalid number of characters";
+        validations.cvcNumberValidation = false;
+        cvcNumberInput.classList.add('error-alert');
     } else {
         cvcNumberError.innerHTML = " ";
         validations.cvcNumberValidation = true;
+        cvcNumberInput.classList.remove('error-alert');
     };
 
-    if (validations.cardHolderNameValidation && validations.cardNumberValidation && validations.expiryDateMonthValidation && validations.cvcNumberValidation) {
+    if (validations.cardHolderNameValidation && validations.cardNumberValidation && validations.expiryDateMonthValidation && validations.expiryDateYearValidation && validations.cvcNumberValidation) {
         flipCard.style.transform = 'rotateY(180deg)';
-        console.log("Thank God!");
     } else {
-        console.log("Thank God!!!");
+        flipCard.style.transform = 'rotateY(0deg)';
     }
-
-    console.log(validations.cardHolderNameValidation)
 });

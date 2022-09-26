@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space-between;
+  align-items: center;
   gap: 4em;
 }
 
@@ -119,17 +119,23 @@ body {
 
 .inputs-field-section-container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .input-complete-state {
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 90%;
   max-width: 450px;
+  height: 25em;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5em;
 }
 
 .front-page {
@@ -139,7 +145,7 @@ body {
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 22px;
 }
 
 input {
@@ -154,6 +160,10 @@ input::placeholder {
   font-size: 1.2rem;
 }
 
+input:focus {
+  border: 1px solid var(--Very-dark-violet);
+}
+
 label {
   color: var(--Very-dark-violet);
 }
@@ -161,6 +171,10 @@ label {
 .error-message {
   color: var(--Red);
   font-size: 0.7rem;
+}
+
+.error-alert {
+  border: solid 1px var(--Red);
 }
 
 .cardholder-name-div {
@@ -224,7 +238,6 @@ label {
 }
 
 .back-page {
-  padding-top: 8em;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -272,4 +285,56 @@ label {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*!MEDIA QUERIES
+*/
+
+@media (min-width: 1440px) {
+  .page-container {
+    flex-direction: row;
+    gap: 0em;
+  }
+
+  .cards-background {
+    background-image: url("images/bg-main-desktop.png");
+    width: 30vw;
+    height: 100vh;
+  }
+
+  .card-front-back {
+    width: 22em;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+  }
+
+  .card-front {
+    top: 23%;
+    left: 13em;
+    transform: scale(1.3);
+  }
+
+  .card-back {
+    top: 55%;
+    left: 17em;
+    transform: scale(1.3);
+  }
+
+  .input-complete-state {
+    position: relative;
+    width: 22em;
+    height: 25em;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
 }
